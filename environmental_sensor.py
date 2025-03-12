@@ -28,6 +28,8 @@ def read_sensor():
     humidity = bme280.relative_humidity 
     url = f"https://api.thingspeak.com/update?api_key={thingspeak_api_write_key}&field1={temperature}&field2={humidity}"
     response = requests.get(url)
+    #url = f"https://api.thingspeak.com/update?api_key={thingspeak_api_write_key}&field1={temperature}"
+    #response = requests.get(url)
     print(f"Temperature: {temperature:.2f} °F") 
     print(f"Humidity: {humidity:.2f} %") 
     print(response)

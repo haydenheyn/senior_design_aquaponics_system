@@ -10,7 +10,7 @@ class node_manager():
         self.ports = {}
         self.active_threads = {}
         self.stop_event = {}
-        self.baudrate = 9600
+        self.baudrate = 115200
  
 
     def get_ports(self):
@@ -62,7 +62,7 @@ class node_manager():
                 print(f"Closing connection to {device}")
                 ser.close()
                 
-    def get_database_connection(self):
+    #def get_database_connection(self):
         
         
 
@@ -78,7 +78,7 @@ def main():
         while True:
             time.sleep(1)
     except KeyboardInterrupt:
-        print("Shutting down gracefully...")
+        print("Shutting down gracefully...s")
         for device, stop_event in p.stop_event.items():
             stop_event.set()  # Signal all threads to stop
 
